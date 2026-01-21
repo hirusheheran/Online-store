@@ -1,0 +1,33 @@
+{
+  "info": {
+    "_postman_id": "f3b2e9a8-1c6c-4f3a-9f6e-a6d7b9c5e123",
+    "name": "Online Store Project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET All Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/"
+      }
+    },
+    {
+      "name": "GET Login Page",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/login"
+      }
+    },
+    {
+      "name": "GET Registration Page",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8080/register"
+      }
+    }
+  ]
+}
