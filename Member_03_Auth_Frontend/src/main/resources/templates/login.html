@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - LuxeStore</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/theme.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="auth-bg">
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card glass-card fade-in" style="width: 100%; max-width: 420px;">
+            <div class="card-body p-5">
+                <div class="text-center mb-5">
+                    <a th:href="@{/}" class="h2 font-weight-bold text-dark text-decoration-none" style="letter-spacing: -1px;">LuxeStore</a>
+                    <p class="text-muted small mt-2">Welcome back! Please enter your details.</p>
+                </div>
+                
+                <form th:action="@{/login}" method="post">
+                    <div th:if="${param.error}" class="alert alert-danger small border-0 fade-in mb-4" style="background: rgba(220, 38, 38, 0.1); color: #dc2626;">
+                        <i class="fas fa-exclamation-circle mr-1"></i> Invalid email or password.
+                    </div>
+                    
+                    <div th:if="${param.logout}" class="alert alert-info small border-0 fade-in mb-4" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">
+                        <i class="fas fa-info-circle mr-1"></i> You have logged out successfully.
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                        <label class="text-dark small font-weight-bold mb-2">Email Address</label>
+                        <input type="email" name="email" class="form-control auth-input" 
+                               placeholder="name@example.com" required 
+                               style="border-radius: 12px;">
+                    </div>
+                    
+                    <div class="form-group mb-4">
+                        <label class="text-dark small font-weight-bold mb-2">Password</label>
+                        <input type="password" name="password" class="form-control auth-input" 
+                               placeholder="••••••••" required 
+                               style="border-radius: 12px;">
+                        <div class="text-right mt-2">
+                            <a href="#" class="small auth-link">Forgot Password?</a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group mb-0 mt-5">
+                        <button type="submit" class="btn btn-block auth-btn" 
+                                style="border-radius: 12px; height: 50px;">
+                            Sign In
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="text-center mt-5 pt-3 border-top">
+                    <span class="text-muted small">Don't have an account?</span> 
+                    <a th:href="@{/register}" class="small auth-link ml-1">Create Account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/theme.js}"></script>
+</body>
+</html>
